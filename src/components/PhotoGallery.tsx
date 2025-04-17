@@ -5,7 +5,7 @@ import {
     DialogTrigger,
     DialogBackdrop,
     DialogPositioner,
-    DialogContent, AspectRatio, Box,
+    DialogContent, Box,
 } from "@chakra-ui/react";
 import {Image, SimpleGrid} from "@chakra-ui/react";
 

@@ -33,7 +33,7 @@ export default function Home() {
                     mb={2}
                     animation={`${fadeIn} 1s ease-in forwards`}
                 >
-                    I'm a Nomadic Potato
+                    I&#39;m a Nomadic Potato
                 </Heading>
                 <Heading
                     size="2xl"

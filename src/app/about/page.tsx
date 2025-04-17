@@ -19,14 +19,14 @@ export default function AboutMe() {
                 />
                 <Box maxW="500px" textAlign="left">
                     <Heading size="lg" mb={2}>
-                        Hi, I'm David Nakonechnyy
+                        Hi, I&#39;m David Nakonechnyy
                     </Heading>
                     <VStack align="start" gap={4}>
                         <Text fontSize="lg">
-                            I'm a software engineer, world traveler, and amateur photographer with a passion for capturing stories from every corner of the globe and sharing perspectives that connect us.
+                            I&#39;m a software engineer, world traveler, and amateur photographer with a passion for capturing stories from every corner of the globe and sharing perspectives that connect us.
                         </Text>
                         <Text fontSize="lg">
-                            In recent years, I've adopted the playful nickname "Nomadic Potato." The "potato" part proudly reflects my Slavic heritage, as my family originates from Ukraine—and frankly, I could eat potatoes for every meal! "Nomadic" speaks to my constant desire for adventure and exploration.
+                            In recent years, I&#39;ve adopted the playful nickname &#34;Nomadic Potato.&#34; The &#34;potato&#34; part proudly reflects my Slavic heritage, as my family originates from Ukraine—and frankly, I could eat potatoes for every meal! &#34;Nomadic&#34; speaks to my constant desire for adventure and exploration.
                         </Text>
                         <Text fontSize="lg">
                             Through the stories I tell about my journeys, I hope to inspire others to pursue their own adventures. Life moves quickly—live fully in each moment, and create memories without regrets.

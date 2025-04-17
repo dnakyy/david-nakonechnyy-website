@@ -2,7 +2,7 @@ import './globals.css'
 import {ReactNode} from 'react'
 import {Chakra} from "@/app/lib/chakra-provider";
 import Navbar from "@/components/NavBar";
-import {Box, Flex} from "@chakra-ui/react";
+import {Box} from "@chakra-ui/react";
 
 export const metadata = {
     title: 'David Nakonechnyy Website',
