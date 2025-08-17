@@ -6,8 +6,8 @@ export const runtime = 'nodejs';
 
 function getAuthenticatedDrive() {
   const oauth2Client = new google.auth.OAuth2(
-    process.env.GOOGLE_CLIENT_ID,
-    process.env.GOOGLE_CLIENT_SECRET
+      process.env.GOOGLE_CLIENT_ID,
+      process.env.GOOGLE_CLIENT_SECRET
   );
 
   if (process.env.GOOGLE_REFRESH_TOKEN) {
@@ -20,10 +20,11 @@ function getAuthenticatedDrive() {
 }
 
 export async function GET(
-  request: NextRequest,
-  { params }: { params: { fileId: string } }
+    request: NextRequest,
+    context: { params: Promise<{ fileId: string }> }
 ) {
   try {
+    const params = await context.params;
     const { fileId } = params;
     const { searchParams } = new URL(request.url);
     const size = searchParams.get('size') || 'medium';
@@ -40,8 +41,8 @@ export async function GET(
 
     if (!file.mimeType?.startsWith('image/')) {
       return NextResponse.json(
-        { error: 'File is not an image' },
-        { status: 400 }
+          { error: 'File is not an image' },
+          { status: 400 }
       );
     }
 
@@ -76,11 +77,15 @@ export async function GET(
     // Convert the stream to a buffer
     const chunks: Uint8Array[] = [];
     const stream = imageResponse.data as NodeJS.ReadableStream;
-    
+
     for await (const chunk of stream) {
-      chunks.push(chunk);
+      if (typeof chunk === 'string') {
+        chunks.push(new TextEncoder().encode(chunk));
+      } else {
+        chunks.push(new Uint8Array(chunk));
+      }
     }
-    
+
     const buffer = Buffer.concat(chunks);
 
     // Return the image with proper headers
@@ -95,8 +100,8 @@ export async function GET(
   } catch (error) {
     console.error('Image fetch error:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch image' },
-      { status: 500 }
+        { error: 'Failed to fetch image' },
+        { status: 500 }
     );
   }
 }
