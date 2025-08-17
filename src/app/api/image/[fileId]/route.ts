@@ -21,10 +21,9 @@ function getAuthenticatedDrive() {
 
 export async function GET(
   request: NextRequest,
-  context: { params: Promise<{ fileId: string }> }
+  { params }: { params: { fileId: string } }
 ) {
   try {
-    const params = await context.params;
     const { fileId } = params;
     const { searchParams } = new URL(request.url);
     const size = searchParams.get('size') || 'medium';
@@ -79,11 +78,7 @@ export async function GET(
     const stream = imageResponse.data as NodeJS.ReadableStream;
     
     for await (const chunk of stream) {
-      if (typeof chunk === 'string') {
-        chunks.push(new TextEncoder().encode(chunk));
-      } else {
-        chunks.push(new Uint8Array(chunk));
-      }
+      chunks.push(chunk);
     }
     
     const buffer = Buffer.concat(chunks);
