@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
-    "fetch-photos": "node scripts/fetch-photos.js",
-    "prebuild": "npm run fetch-photos",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
