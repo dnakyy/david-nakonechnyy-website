@@ -1,7 +1,7 @@
 "use client"
 
 import {ChakraProvider} from "@chakra-ui/react"
-import system from "@/app/lib/theme";
+import system from "./theme";
 import React from "react";
 import {ThemeProvider} from "next-themes";
 

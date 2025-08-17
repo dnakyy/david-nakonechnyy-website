@@ -1,6 +1,6 @@
 import './globals.css'
 import {ReactNode} from 'react'
-import {Chakra} from "@/app/lib/chakra-provider";
+import {Chakra} from "@/lib/chakra-provider";
 import Navbar from "@/components/NavBar";
 import {Box} from "@chakra-ui/react";
 

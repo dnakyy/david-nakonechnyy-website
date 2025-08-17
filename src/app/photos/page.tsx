@@ -1,12 +1,12 @@
 
 import { Box, Heading } from '@chakra-ui/react'
-import ImageGallery from "@/components/PhotoGallery";
+import GoogleDriveGallery from "@/components/GoogleDriveGallery";
 
 export default function Photos() {
     return (
         <Box textAlign="center" mt={20}>
-            <Heading size="2xl" mb={4}>Photos</Heading>
-            <ImageGallery/>
+            <Heading size="2xl" mb={6}>Photos</Heading>
+            <GoogleDriveGallery />
         </Box>
     )
 }
